@@ -6,7 +6,7 @@
       dg-card-list(
         :list="$store.state.breedImageList"
         @like="onLike"
-        :limit="20"
+        :limit="limit"
       )
 </template>
 
@@ -14,11 +14,18 @@
 import DgCardList from '../components/DgCardList'
 import { mapActions } from 'vuex'
 import DgSubheader from '../components/DgSubheader'
+import scrollToBottomMixin from '../mixins/scrollToBottomMixin'
 export default {
   name: 'BreedPage',
   components: {DgSubheader, DgCardList},
+  mixins: [scrollToBottomMixin],
   props: {
     breed: String
+  },
+  data () {
+    return {
+      limit: 20
+    }
   },
   methods: {
     ...mapActions({
@@ -29,6 +36,16 @@ export default {
     }
   },
   watch: {
+    isScrolledToBottom (val) {
+      if (val) {
+        /*
+          api выдаёт весь список фото,
+          поэтому вместо догрузки данных,
+          просто расширяем ограничитель видимых фото
+         */
+        this.limit += 20
+      }
+    },
     breed (val, old) {
       if (val !== old) {
         this.fetchData()
