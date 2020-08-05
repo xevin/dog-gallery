@@ -1,6 +1,6 @@
 # dog-gallery
 
-> A Vue.js project
+Реализация [ТЗ](https://github.com/gkshi/frontend_testovoe_vue/blob/master/README.md)
 
 ## Build Setup
 
