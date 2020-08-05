@@ -12,6 +12,13 @@ export default {
         return data.message
       })
   },
+  appendRandomDogList ({commit}) {
+    return DogApi.get('/breeds/image/random/20')
+      .then(data => {
+        commit(TYPES.ADD_DOG_LIST, data.message.map(extractBreed))
+        return data.message
+      })
+  },
   pullBreeds ({commit}) {
     return DogApi.get('/breeds/list/all')
       .then(data => {

@@ -5,6 +5,9 @@ export default {
   [TYPES.SET_DOG_LIST] (state, payload) {
     state.dogList = payload
   },
+  [TYPES.ADD_DOG_LIST] (state, payload) {
+    state.dogList = [...state.dogList, ...payload]
+  },
   [TYPES.SET_BREEDS] (state, payload) {
     state.breeds = payload
   },

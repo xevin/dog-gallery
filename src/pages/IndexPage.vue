@@ -1,5 +1,6 @@
 <template lang="pug">
   .index-page
+    p.fix {{ isScrolledToBottom }}
     dg-subheader
       template(slot="head_end")
         dg-checkbox(
@@ -19,10 +20,12 @@ import DgCardList from '../components/DgCardList'
 import DgCheckbox from '../components/DgCheckbox'
 import { mapActions } from 'vuex'
 import DgSubheader from '../components/DgSubheader'
+import scrollToBottomMixin from '../mixins/scrollToBottomMixin'
 
 export default {
   name: 'IndexPage',
   components: {DgSubheader, DgCheckbox, DgCardList},
+  mixins: [scrollToBottomMixin],
   data () {
     return {
       isOrdered: false
@@ -31,6 +34,13 @@ export default {
   computed: {
     list () {
       return this.isOrdered ? this.$store.getters['sortedDogList'] : this.$store.state.dogList
+    }
+  },
+  watch: {
+    isScrolledToBottom (val) {
+      if (val) {
+        this.$store.dispatch('appendRandomDogList')
+      }
     }
   },
   mounted () {
@@ -45,4 +55,8 @@ export default {
 </script>
 
 <style>
+.fix {
+  position: absolute;
+
+}
 </style>
