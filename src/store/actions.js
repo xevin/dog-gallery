@@ -29,6 +29,7 @@ export default {
   pullBreedPhotos ({commit}, breedName) {
     commit(TYPES.DELETE_BREED_IMAGE_LIST)
 
+    breedName = breedName.replace('-', '/')
     return DogApi.get(`/breed/${breedName}/images`)
       .then(data => {
         commit(TYPES.SET_BREED_IMAGE_LIST, data.message.map(extractBreed))
