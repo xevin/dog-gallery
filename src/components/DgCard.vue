@@ -33,7 +33,6 @@ export default {
 .dg-card {
   width: 100%;
   height: 100%;
-  max-width: 367px;
   max-height: 270px;
   overflow: hidden;
   position: relative;

@@ -5,7 +5,14 @@ export default {
     }
   },
   mounted () {
-    window.onscroll = () => {
+    window.addEventListener('scroll', this.watchScroll)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.watchScroll)
+  },
+  methods: {
+    watchScroll () {
+      console.log('watch scroll')
       this.isScrolledToBottom = Math.max(
         window.pageYOffset,
         document.documentElement.scrollTop,

@@ -8,13 +8,10 @@
 <script>
 import DgHeader from './components/DgHeader'
 import DgFooter from './components/DgFooter'
-import DgSpoiler from './components/DgFilter'
-import DgButton from './components/DgButton'
-import DgCheckbox from './components/DgCheckbox'
 
 export default {
   name: 'App',
-  components: {DgCheckbox, DgButton, DgSpoiler, DgHeader, DgFooter},
+  components: {DgHeader, DgFooter},
   mounted () {
     this.$store.dispatch('pullBreeds')
   }

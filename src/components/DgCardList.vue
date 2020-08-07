@@ -4,6 +4,7 @@
       :cover="item.image"
       :title="item.breed"
       v-for="item in list.slice(0, limit)"
+      :key="item.image"
       :is-liked="$store.getters['likedPhotos'].includes(item.image)"
       @like="$emit('like', item.image)"
     )

@@ -1,6 +1,5 @@
 <template lang="pug">
   .index-page
-    p.fix {{ isScrolledToBottom }}
     dg-subheader
       template(slot="head_end")
         dg-checkbox(
@@ -55,8 +54,4 @@ export default {
 </script>
 
 <style>
-.fix {
-  position: absolute;
-
-}
 </style>

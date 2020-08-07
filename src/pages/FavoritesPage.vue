@@ -2,22 +2,22 @@
   .favorites-page
     .content
       dg-card-list(
-        :list="list"
+        :list="likedList"
         @like="onLike"
       )
 </template>
 
 <script>
 import DgCardList from '../components/DgCardList'
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'FavoritesPage',
   components: {DgCardList},
   computed: {
-    list () {
-      return this.$store.getters['likedPhotosBreed']
-    }
+    ...mapGetters({
+      likedList: 'likedPhotosBreed'
+    })
   },
   methods: {
     ...mapActions({

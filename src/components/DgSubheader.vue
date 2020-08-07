@@ -18,6 +18,7 @@
           tag="router-link"
           :to="item"
           v-for="item in $store.getters['breedList']"
+          :key="item"
           :active="$route.params.breed === item"
         ) {{ item }}
 </template>
