@@ -1,6 +1,6 @@
 <template lang="pug">
-.dg-icon
-  img(:src="iconReq")
+  .dg-icon
+    img(:src="iconReq")
 </template>
 
 <script>
@@ -21,6 +21,7 @@ export default {
 .dg-icon {
   display: inline-flex;
 }
+
 .dg-icon img {
   width: 100%;
   height: auto;

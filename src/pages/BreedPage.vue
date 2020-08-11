@@ -15,6 +15,7 @@ import DgCardList from '../components/DgCardList'
 import { mapActions } from 'vuex'
 import DgSubheader from '../components/DgSubheader'
 import scrollToBottomMixin from '../mixins/scrollToBottomMixin'
+
 export default {
   name: 'BreedPage',
   components: {DgSubheader, DgCardList},

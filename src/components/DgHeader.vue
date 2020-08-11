@@ -1,14 +1,14 @@
 <template lang="pug">
-.dg-header
-  router-link(:to="{name:'index'}")
-    dg-logo
+  .dg-header
+    router-link(:to="{name:'index'}")
+      dg-logo
 
-  router-link.link(
-    :to="{name: 'favorites'}"
-    :class="{'link--active': $route.path === '/favorites'}"
-  )
-    span Избранные
-    dg-icon(name="empty_heart")
+    router-link.link(
+      :to="{name: 'favorites'}"
+      :class="{'link--active': $route.path === '/favorites'}"
+    )
+      span Избранные
+      dg-icon(name="empty_heart")
 </template>
 
 <script>

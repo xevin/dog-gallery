@@ -1,5 +1,5 @@
 <template lang="pug">
-.dg-footer
+  .dg-footer
 </template>
 
 <script>

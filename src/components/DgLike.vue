@@ -2,14 +2,17 @@
   .dg-like(@click="onClick")
     dg-icon(
       v-show="value"
-      name="filled_heart")
+      name="filled_heart"
+    )
     dg-icon(
       v-show="!value"
-      name="empty_heart")
+      name="empty_heart"
+    )
 </template>
 
 <script>
 import DgIcon from './DgIcon'
+
 export default {
   name: 'DgLike',
   components: {DgIcon},
@@ -26,6 +29,7 @@ export default {
 .dg-like {
   cursor: pointer;
 }
+
 .dg-like img {
   width: 24px;
 }

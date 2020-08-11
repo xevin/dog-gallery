@@ -12,7 +12,6 @@ export default {
   },
   methods: {
     watchScroll () {
-      console.log('watch scroll')
       this.isScrolledToBottom = Math.max(
         window.pageYOffset,
         document.documentElement.scrollTop,

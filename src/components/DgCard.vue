@@ -1,11 +1,11 @@
 <template lang="pug">
-.dg-card
-  .dg-card__like
-    dg-like(:value="isLiked", @input="onLike")
+  .dg-card
+    .dg-card__like
+      dg-like(:value="isLiked", @input="onLike")
 
-  img.dg-card__cover(:src="cover")
+    img.dg-card__cover(:src="cover")
 
-  router-link.dg-card__title(:to="title") {{ title }}
+    router-link.dg-card__title(:to="title") {{ title }}
 </template>
 
 <script>
@@ -37,7 +37,7 @@ export default {
   overflow: hidden;
   position: relative;
   border-radius: 8px;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .dg-card__cover {
